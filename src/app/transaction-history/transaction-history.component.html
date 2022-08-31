@@ -1,0 +1,28 @@
+<div class="container">
+  <h3>Transaction History</h3>
+  <div class="card">
+    <div class="card-body">
+      <div class="container text-center">
+        <div class="row">
+          <div class="col">
+            <label> Account Type:</label> Saving
+          </div>
+          <div class="col">
+            <label> Saving Balance :</label> {{ savingBalance }}
+          </div>
+          <div class="col">
+            <label> Account Number :</label> {{ accNo }}
+          </div>
+        </div>
+      </div>
+      <hr/>
+
+      <ag-grid-angular class="ag-theme-alpine" [rowData]="transactionList" [columnDefs]="columnDefs"
+        style="width: auto; height: 500px" [defaultColDef]="defaultColDef"  [paginationAutoPageSize]="true"
+        [pagination]="true"></ag-grid-angular>
+
+    </div>
+  </div>
+  <br />
+
+</div>

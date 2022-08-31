@@ -1,0 +1,19 @@
+.app-footer {
+    background-color: #666;
+    padding-top: 15px;
+    color: #fff;
+}
+
+.footer-section-1 {
+    color: #fff;
+}
+
+.footer-section-2 {
+    padding: 15px;
+    color: #fff;
+    background-color: #21D192;
+}
+
+.footer-section-2 a, .footer-section-1 a {
+    color: #fff !important;
+}

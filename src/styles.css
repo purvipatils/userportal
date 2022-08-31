@@ -1,0 +1,13 @@
+@import 'ag-grid-community/dist/styles/ag-grid.css';
+@import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
+
+
+body {
+    font-family: "Open Sans", sans-serif;
+}
+
+.nav-border {
+    border-bottom: 2px solid #21d192;
+    background: #fff;
+}
+

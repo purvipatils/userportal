@@ -1,0 +1,7 @@
+nav.navbar {
+    margin-bottom: 25px;
+}
+
+.userName{
+    text-transform: capitalize;
+}

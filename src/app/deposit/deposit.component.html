@@ -1,0 +1,43 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<div class="container">
+  <form [formGroup]="depositForm" (ngSubmit)="deposit()" method="post">
+    <div class="col-xs-4" style="left: 35%">
+      <h3 style="text-align: center">Deposit Money</h3>
+    </div>
+    <br />
+
+    <div class="form-group" style="text-align: center">
+      <label>Account Number : </label> <label>{{ saccountno }} </label>
+    </div>
+
+    <div class="form-group">
+      <label>Enter Amount:</label>
+      <br />
+      <input
+        type="text"
+        formControlName="amount"
+        class="form-control"
+        [ngClass]="{ 'is-invalid': submitted && fval.amount.errors }"
+        placeholder="Enter amount"
+      />
+      <div *ngIf="submitted && fval.amount.errors" class="invalid-feedback">
+        <div *ngIf="fval.amount.errors.required">Amount is required</div>
+      </div>
+    </div>
+
+    <div class="center1">
+      <button
+        [disabled]="loading"
+        class="btn btn-primary"
+        class="btn btn-info form-control"
+      >
+        <span
+          *ngIf="loading"
+          class="spinner-border spinner-border-sm mr-1"
+        ></span>
+        <a (click)="deposit()" style="color: white">Deposit</a>
+      </button>
+    </div>
+  </form>
+</div>

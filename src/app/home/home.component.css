@@ -1,0 +1,88 @@
+#userSession {
+  float: right;
+}
+
+.center {
+  left: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#userSession {
+  float: right;
+}
+
+.center {
+  left: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+body .infobox {
+  font-weight: 400;
+  font-size: 20px;
+  color: #323232;
+  height: auto;
+  padding: 2%;
+  background-color: #f1ecec;
+  border: 1px solid #f5f5f5;
+  border-radius: 15px;
+  -webkit-box-shadow: 0px 0px 10px 0px #f5f5f5;
+  box-shadow: 0px 0px 10px 0px #f5f5f5;
+  margin: 10rem auto;
+  width: 35em;
+}
+
+.box-wrap {
+  min-height: 250px;
+}
+
+.box-wrap a {
+  color: #fff;
+}
+
+.laptop-bg {
+  background-image: url('../../assets/man-with-laptop-light.png');
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.box-title {
+  font-size: 1.2em;
+  color: #333;
+  padding: 10px 10px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.box-info {
+  font-size: 1.825rem;
+  color: #000;
+  padding: 15px 10px;
+  text-align: center;
+  margin: 10px 0px;
+  border: 1px dashed #ccc;
+  border-left: none;
+  border-right: none;
+}
+
+.transfer {
+  color: #f39c12;
+}
+
+.withdrawl {
+  color: #e74c3c;
+}
+
+.deposit {
+  color: #0dcaf0;
+}
+
+.balance {
+  color: #696cff;
+}
+
+.transaction {
+  color: #2c3e50;
+}

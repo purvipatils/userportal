@@ -1,0 +1,56 @@
+<nav class="navbar navbar-expand-lg fixed-top nav-border " *ngIf="isLoggedIn | async as isLoggedIn">
+    <div class="container">
+        <a class="navbar-brand" routerLink="/home">
+            <i class="fa-solid fa-building-columns"></i>
+            ICIN Bank</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/transactionHistory">Transaction History<span
+                            class="sr-only"></span></a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/transferHistory">Transfer History<span class="sr-only"></span></a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/deposit">Deposit Money<span class="sr-only"></span></a>
+                </li>
+
+
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/withdraw">Withdraw Money<span class="sr-only"></span></a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/transfer">Transfer Money<span class="sr-only"></span></a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/chequebookRequest">Request Checkbook<span
+                            class="sr-only"></span></a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle userName" href="Javascript:void(0)" id="dropdown04"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" (click)="toggleMenu()">
+
+                        <i class="fa-solid fa-user"></i>
+
+                        {{user | async}}
+                    </a>
+                    <div class="dropdown-menu" [ngClass]="{'show': isShow}" aria-labelledby="dropdown04">
+                        <a class="dropdown-item" routerLink="/editProfile">Change Profile Settings</a>
+                        <a class="dropdown-item" routerLink="/login" (click)="logOut()">Logout</a>
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</nav>
