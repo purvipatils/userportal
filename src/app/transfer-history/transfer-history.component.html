@@ -1,20 +1,10 @@
-<table class="table table-bordered-md" style="overflow-x: auto">
-  <thead>
-    <tr>
-      <th style="text-align: center">Date</th>
-      <th style="text-align: center">Transaction Id</th>
-      <th style="text-align: center">Amount</th>
-      <th style="text-align: center">Sender Account Number</th>
-      <th style="text-align: center">Receiver Account Number</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let transfer of transferList">
-      <td style="text-align: center">{{ transfer.date }}</td>
-      <td style="text-align: center">{{ transfer.id }}</td>
-      <td style="text-align: center">{{ transfer.amount }}</td>
-      <td style="text-align: center">{{ transfer.saccount }}</td>
-      <td style="text-align: center">{{ transfer.raccount }}</td>
-    </tr>
-  </tbody>
-</table>
+<div class="container">
+  <h3>Transfer History</h3>
+  <div class="card">
+    <div class="card-body">
+      <ag-grid-angular class="ag-theme-alpine" [rowData]="transferList" [columnDefs]="columnDefs"
+        style="width: auto; height: 500px" [defaultColDef]="defaultColDef" [paginationAutoPageSize]="true"
+        [pagination]="true"></ag-grid-angular>
+    </div>
+  </div>
+</div>

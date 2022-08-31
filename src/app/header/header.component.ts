@@ -9,18 +9,25 @@ import { AuthService } from '../auth.service';
 })
 export class HeaderComponent implements OnInit {
   isLoggedIn: Observable<boolean>;
+  isRegsiter: Observable<boolean>;
   user: Observable<string>;
   isShow = false;
+  isMobileNav = false;
   constructor(public authService: AuthService) { }
 
   ngOnInit(): void {
     this.isLoggedIn = this.authService.isLoggedIn;
     this.user = this.authService.userName;
+    this.isRegsiter = this.authService.isRegisterPage;
 
   }
 
   toggleMenu() {
     this.isShow = !this.isShow;
+  }
+
+  toggleNav(){
+    this.isMobileNav = !this.isMobileNav;
   }
 
   logOut() {

@@ -102,5 +102,8 @@
       }
     }
   },
-  "defaultProject": "userPortal"
+  "defaultProject": "userPortal",
+  "cli": {
+    "analytics": false
+  }
 }

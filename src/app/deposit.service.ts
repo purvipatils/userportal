@@ -13,8 +13,7 @@ export class DepositService {
     const body = {
       account: account,
       amount: amount,
-    };
-    console.log(body);
+    };   
     return this.http.post(environment.baseUrl + '/account/deposit', body);
   }
 }

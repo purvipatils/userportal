@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { User } from '../models';
 import { RegisterService } from '../register.service';
+import { AuthService } from '../auth.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -13,7 +14,8 @@ export class RegisterComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
-    private registerService: RegisterService
+    private registerService: RegisterService,
+    private authService :AuthService
   ) {}
   identityType = [
     { name: 'Aadhar Card', value: 'aadhar' },
@@ -26,6 +28,7 @@ export class RegisterComponent implements OnInit {
   submitted = false;
   selectedOption: string;
   ngOnInit() {
+    this.authService.setRegisterPageStatus(true);
     this.registerForm = this.formBuilder.group({
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],

@@ -2,6 +2,21 @@ nav.navbar {
     margin-bottom: 25px;
 }
 
-.userName{
+.userName {
     text-transform: capitalize;
+}
+
+.close-btn {
+    position: absolute;
+    height: 23px;
+    width: 23px;
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    right: 5px;
+    background: #181717;
+    border-radius: 50%;
+    padding-bottom: 2px;
+    text-align: center;
+    bottom: 5px;
 }

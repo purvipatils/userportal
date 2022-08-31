@@ -3,7 +3,7 @@
     <div class="col-lg-9">
       <div class="card">
         <div class="card-body box-wrap laptop-bg">
-          <h3>Welcome to ICIN Bank Pravin !</h3>
+          <h3>Welcome to ICIN Bank {{username}} !</h3>
           <p>
             We offer you actions like Transfer of money, Checkbook request, Deposit,
             Withdraw.
@@ -33,10 +33,10 @@
       <div class="card">
         <div class="card-body box-wrap">
           <div class="box-title transfer"><i class="fa-solid fa-money-bill-transfer"></i> Total Transfer</div>
-          <div class="box-info"> ₹ {{ savingBalanceLocal }}.00</div>
+          <div class="box-info"> ₹ {{ transfer }}.00</div>
           <p class="text-center">
             <br/>
-            <a class="btn btn-warning" href="/deposit">Transfer Money</a>
+            <a class="btn btn-warning" href="/transfer">Transfer Money</a>
           </p>
         </div>
       </div>
@@ -45,10 +45,10 @@
       <div class="card">
         <div class="card-body box-wrap">
           <div class="box-title withdrawl"><i class="fa-solid fa-magnifying-glass-dollar"></i> Total Withdrawl</div>
-          <div class="box-info"> ₹ {{ savingBalanceLocal }}.00</div>
+          <div class="box-info"> ₹ {{ transaction.withdrawl }}.00</div>
           <p class="text-center">
             <br/>
-            <a class="btn btn-danger" href="/deposit">Withdraw Money</a>
+            <a class="btn btn-danger" href="/withdraw">Withdraw Money</a>
           </p>
         </div>
       </div>
@@ -57,7 +57,7 @@
       <div class="card">
         <div class="card-body box-wrap">
           <div class="box-title deposit"><i class="fa-solid fa-sack-dollar"></i> Total Deposit </div>
-          <div class="box-info"> ₹ {{ savingBalanceLocal }}.00</div>
+          <div class="box-info"> ₹ {{ transaction.deposit }}.00</div>
           <p class="text-center">
             <br/>
             <a class="btn btn-info" href="/deposit">Deposit Money</a>
@@ -69,10 +69,10 @@
       <div class="card">
         <div class="card-body box-wrap">
           <div class="box-title transaction"><i class="fa-solid fa-receipt"></i> Total Transaction</div>
-          <div class="box-info"> ₹ {{ savingBalanceLocal }}.00</div>
-          <p class="text-center">
-            <br/>
-            <a class="btn btn-secondary" href="/deposit">Withdraw Money</a>
+          <div class="box-info"> ₹ {{transaction.total}}.00</div>
+          
+          <p class="text-center" style="font-size: 1.5em;">
+            {{transaction.count}} Transcations.
           </p>
         </div>
       </div>

@@ -9,10 +9,13 @@ import { AuthService } from '../auth.service';
 })
 export class FooterComponent implements OnInit {
   isLoggedIn: Observable<boolean>;
+  isRegsiter: Observable<boolean>;
+  
   constructor(public authService: AuthService) { }
 
   ngOnInit(): void {
     this.isLoggedIn = this.authService.isLoggedIn;
+    this.isRegsiter = this.authService.isRegisterPage;
   }
 
 }

@@ -44,8 +44,7 @@ export class ChequeBookRequestComponent implements OnInit {
       this.selectedValue = 20;
     }
     try {
-      this.requestService.insertRequest(this.requestingAccNo, +this.selectedValue).subscribe((res: any) => {
-        console.log(res);
+      this.requestService.insertRequest(this.requestingAccNo, +this.selectedValue).subscribe((res: any) => {       
         this.loading = false;
         if (res.status) {
           Swal.fire(

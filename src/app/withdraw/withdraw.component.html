@@ -1,42 +1,32 @@
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <div class="container">
-  <form [formGroup]="withdrawForm" (ngSubmit)="withdraw()" method="post">
-    <div class="col-xs-4" style="left: 35%">
-      <h3 style="text-align: center">Withdraw Money</h3>
+  <h3>Withdraw Money</h3>
+  <div class="card">
+    <div class="card-body">
+      <form [formGroup]="withdrawForm" (ngSubmit)="withdraw()" method="post">
+        <div class="row">
+          <div class="col">
+            <label> Your Account Number : </label>
+            <input type="text" value={{savingAccount}} readonly class="form-control" placeholder=""
+              aria-label="your account number">
+          </div>
+          <div class="col">
+            <label>Enter Amount:</label>
+            <input type="text" formControlName="amount" class="form-control"
+              [ngClass]="{ 'is-invalid': submitted && fval.amount.errors }" placeholder="Enter amount" />
+            <div *ngIf="submitted && fval.amount.errors" class="invalid-feedback">
+              <div *ngIf="fval.amount.errors.required">Amount is required</div>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col">              
+              <button [disabled]="loading" class="btn btn-primary" class="btn btn-info">
+                <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                <a (click)="withdraw()" style="color: rgb(255, 255, 255)">Withdraw</a>
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
     </div>
-    <br />
-
-    <div class="form-group" style="text-align: center">
-      <label>Account Number : </label> <label>{{ saccountno }} </label>
-    </div>
-
-    <div class="form-group">
-      <label>Enter Amount:</label>
-      <br />
-      <input
-        type="text"
-        formControlName="amount"
-        class="form-control"
-        [ngClass]="{ 'is-invalid': submitted && fval.amount.errors }"
-        placeholder="Enter amount"
-      />
-      <div *ngIf="submitted && fval.amount.errors" class="invalid-feedback">
-        <div *ngIf="fval.amount.errors.required">Amount is required</div>
-      </div>
-    </div>
-
-    <div class="center1">
-      <button
-        [disabled]="loading"
-        class="btn btn-primary"
-        class="btn btn-info form-control"
-      >
-        <span
-          *ngIf="loading"
-          class="spinner-border spinner-border-sm mr-1"
-        ></span>
-        <a (click)="withdraw()" style="color: white">Withdraw</a>
-      </button>
-    </div>
-  </form>
+  </div>
 </div>

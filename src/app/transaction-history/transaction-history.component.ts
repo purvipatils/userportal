@@ -27,10 +27,7 @@ export class TransactionHistoryComponent implements OnInit {
     filter: true,
   };
 
-
   @ViewChild(AgGridAngular) agGrid!: AgGridAngular;
-
-
 
   constructor(private transactionService: TransactionService) { }
 

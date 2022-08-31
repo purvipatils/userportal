@@ -14,21 +14,20 @@ export class DepositComponent implements OnInit {
     private formBuilder: FormBuilder,
     private router: Router,
     private depositService: DepositService
-  ) {}
+  ) { }
   depositForm: FormGroup;
   loading = false;
   submitted = false;
 
   ngOnInit(): void {
-    const accNo = +localStorage.getItem('savingAccNo');
-    console.log(accNo);
+    const accNo = +localStorage.getItem('savingAccNo');    
     this.depositForm = this.formBuilder.group({
       account: accNo,
       amount: ['', [Validators.required]],
     });
   }
 
-  get saccountno(): any {
+  get savingAccount(): any {
     return localStorage.getItem('savingAccNo');
   }
   get fval() {

@@ -20,15 +20,14 @@ export class WithdrawComponent implements OnInit {
   submitted = false;
 
   ngOnInit(): void {
-    var accNo = +localStorage.getItem('savingAccNo');
-    console.log(accNo);
+    var accNo = +localStorage.getItem('savingAccNo');    
     this.withdrawForm = this.formBuilder.group({
       account: accNo,
       amount: ['', [Validators.required]],
     });
   }
 
-  get saccountno(): any {
+  get savingAccount(): any {
     return localStorage.getItem('savingAccNo');
   }
   get fval() {

@@ -7,21 +7,21 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root',
 })
 export class TransferService {
-  
+
   constructor(private http: HttpClient) { }
 
   insertEntry(
     username: string,
-    saccount: string,
+    savingAccount: string,
     ifscNo: string,
-    raccount: string,
+    primaryAccount: string,
     amount: number
   ) {
     const body = {
       username: username,
-      saccount: saccount,
+      savingAccount: savingAccount,
       ifsc: ifscNo,
-      raccount: raccount,
+      primaryAccount: primaryAccount,
       amount: amount,
     };
     console.log(body);

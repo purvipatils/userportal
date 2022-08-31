@@ -1,13 +1,13 @@
-<nav class="navbar navbar-expand-lg fixed-top nav-border " *ngIf="isLoggedIn | async as isLoggedIn">
+<nav class="navbar navbar-expand-lg fixed-top nav-border " *ngIf="(isLoggedIn | async) ||(isRegsiter | async)">
     <div class="container">
         <a class="navbar-brand" routerLink="/home">
             <i class="fa-solid fa-building-columns"></i>
             ICIN Bank</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        <button class="navbar-toggler" type="button" (click)="toggleNav()"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-collapse" [ngClass]="{'collapse': !isMobileNav}" id="navbarSupportedContent" *ngIf="isLoggedIn | async">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
                     <a class="nav-link" routerLink="/transactionHistory">Transaction History<span
@@ -44,9 +44,11 @@
 
                         {{user | async}}
                     </a>
-                    <div class="dropdown-menu" [ngClass]="{'show': isShow}" aria-labelledby="dropdown04">
+                    <div class="dropdown-menu" [ngClass]="{'show': isShow}" aria-labelledby="dropdown04"> 
+                        <a class="close-btn" (click)="toggleMenu()" href="Javascript:void(0)">&#10006;</a>                       
                         <a class="dropdown-item" routerLink="/editProfile">Change Profile Settings</a>
                         <a class="dropdown-item" routerLink="/login" (click)="logOut()">Logout</a>
+                       
                     </div>
                 </li>
             </ul>

@@ -1,25 +1,31 @@
+<div class="container">
+  <h3>Request Cheque Book</h3>
+  <div class="card">
+    <div class="card-body">
 
-  <div class="container col-xs-4">
-    <h3 style="text-align: center">Request Cheque Book</h3>
-    <div class="form-group">
-      <div style="text-align: center" class="form-group">
-        <label>Account Number :&nbsp;</label> <label>{{ requestingAccNo }}</label>
+      <div class="row">
+        <div class="col">
+          <label> Your Account Number : </label>
+          <input type="text" value={{requestingAccNo}} readonly class="form-control" placeholder=""
+            aria-label="your account number">
+        </div>
+        <div class="col">
+          <label>ChequeBook pages</label>
+          <select class="form-control" (change)="$any($event.target).value">
+            <option *ngFor="let p of pages" [value]="p.value">
+              {{ p.name }}
+            </option>
+          </select>
+        </div>
+        <div class="row mt-3">
+          <div class="col">
+            <button (click)="setOption()" class="btn btn-info">
+              <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>Request Chequebook
+            </button>
+          </div>
+        </div>
       </div>
-    </div>
-  
-    <div class="form-group">
-      <label>ChequeBook pages</label>
-      <br />
-      <select class="form-control" (change)="$any($event.target).value">
-        <option *ngFor="let p of pages" [value]="p.value">
-          {{ p.name }}
-        </option>
-      </select>
-      <br />
-      <button (click)="setOption()" class="btn btn-info form-control">
-        <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span
-        >Request Chequebook
-      </button>
-      <br />
+
     </div>
   </div>
+</div>
